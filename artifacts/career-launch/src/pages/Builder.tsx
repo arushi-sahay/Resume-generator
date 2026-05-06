@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "wouter";
 import { useFieldArray } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import { ResumeScore } from "@/components/ResumeScore";
 import { MinimalModern } from "@/components/ResumeTemplates/MinimalModern";
 import { ProfessionalCorporate } from "@/components/ResumeTemplates/ProfessionalCorporate";
 import { StudentFresher } from "@/components/ResumeTemplates/StudentFresher";
-import { ArrowLeft, Download, FileDown, LayoutTemplate, Printer, Trash2, Wand2, Moon, Sun } from "lucide-react";
+import { ArrowLeft, FileDown, LayoutTemplate, Lightbulb, Trash2, Wand2, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export default function Builder() {
@@ -23,10 +23,22 @@ export default function Builder() {
 
   const { form, formData, score, loadSampleData, setValue } = useResumeForm(professionId || "software-engineering");
   const [activeTemplate, setActiveTemplate] = useState<"minimal" | "corporate" | "fresher">("minimal");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const closeSuggestions = useCallback(() => setShowSuggestions(false), []);
+  const toggleSuggestions = useCallback(() => setShowSuggestions(prev => !prev), []);
 
   useEffect(() => {
     document.title = `Builder | CareerLaunch`;
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeSuggestions();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [closeSuggestions]);
 
   const { fields: eduFields, append: appendEdu, remove: removeEdu } = useFieldArray({ control: form.control, name: "education" });
   const { fields: expFields, append: appendExp, remove: removeExp } = useFieldArray({ control: form.control, name: "experience" });
@@ -266,8 +278,8 @@ export default function Builder() {
         </div>
 
         {/* Preview Panel */}
-        <div className="w-full lg:w-[55%] xl:w-[60%] bg-muted/40 relative flex flex-col h-[calc(100vh-64px)] print:h-auto print:w-full print:bg-white print:p-0">
-          
+        <div className="w-full lg:w-[55%] xl:w-[60%] bg-muted/40 relative flex flex-col h-[calc(100vh-64px)] print:h-auto print:w-full print:bg-white print:p-0 overflow-hidden">
+
           {/* Template Switcher (no-print) */}
           <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-background/80 backdrop-blur border border-border shadow-sm p-1 rounded-full no-print flex items-center">
             <LayoutTemplate className="w-4 h-4 text-muted-foreground ml-3 mr-2" />
@@ -280,20 +292,56 @@ export default function Builder() {
             </Tabs>
           </div>
 
-          {/* Suggestions Trigger (no-print) */}
-          <div className="absolute top-4 right-4 z-10 no-print w-[300px]">
-            <SmartSuggestions 
-              profession={profession} 
+          {/* Suggestions Toggle Button (no-print) */}
+          <Button
+            variant={showSuggestions ? "default" : "outline"}
+            size="sm"
+            onClick={toggleSuggestions}
+            data-testid="button-toggle-suggestions"
+            className="absolute top-4 right-4 z-20 no-print gap-2 shadow-sm"
+            aria-expanded={showSuggestions}
+            aria-controls="suggestions-panel"
+          >
+            <Lightbulb className="w-4 h-4" />
+            <span className="hidden sm:inline">Suggestions</span>
+          </Button>
+
+          {/* Backdrop — click to close (no-print) */}
+          {showSuggestions && (
+            <div
+              className="absolute inset-0 z-20 bg-black/20 no-print"
+              onClick={closeSuggestions}
+              aria-hidden="true"
+            />
+          )}
+
+          {/* Slide-over Suggestions Panel (no-print) */}
+          <div
+            id="suggestions-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Smart Suggestions"
+            className={[
+              "absolute inset-y-0 right-0 z-30 no-print",
+              "w-full sm:w-[340px]",
+              "border-l border-border shadow-2xl",
+              "flex flex-col",
+              "transition-transform duration-300 ease-in-out",
+              showSuggestions ? "translate-x-0" : "translate-x-full",
+            ].join(" ")}
+          >
+            <SmartSuggestions
+              profession={profession}
               onAddSkill={handleAddSkillFromSuggestion}
               onAddBullet={handleAddBulletFromSuggestion}
+              onClose={closeSuggestions}
             />
           </div>
 
           {/* Resume Rendering Area */}
           <div className="flex-1 overflow-y-auto p-4 md:p-8 pt-20 pb-20 custom-scrollbar flex justify-center items-start print:p-0 print:overflow-visible print:block print:m-0">
-            {/* Scale down on smaller screens, actual size on print */}
             <div className="origin-top w-full max-w-[794px] print:transform-none print:w-full print:max-w-none transition-all">
-              <div className="print-only hidden"></div> {/* Hack for specificity */}
+              <div className="print-only hidden"></div>
               <div className="shadow-2xl print:shadow-none bg-white">
                 {activeTemplate === "minimal" && <MinimalModern data={formData} />}
                 {activeTemplate === "corporate" && <ProfessionalCorporate data={formData} />}
