@@ -1,0 +1,122 @@
+Build a modern, minimal, mobile-friendly web application called “CareerLaunch” — a niche resume generator platform for students and freshers.
+
+The website should feel aesthetically clean, modern, calming, and highly user-friendly, similar to modern SaaS landing pages. Use a soft minimal design with excellent spacing, rounded cards, subtle shadows, responsive layouts, and smooth transitions.
+
+Tech stack:
+
+* Next.js
+* React
+* TailwindCSS
+* Client-side only for V1
+* No backend
+* No authentication
+* No database
+* Generate downloadable PDF resumes directly in browser
+
+Core Goal:
+Users can generate ATS-friendly resumes for specific professions and student niches in under 3 minutes.
+
+The website structure should include:
+
+1. Landing Page
+
+* Hero section with headline:
+  “Build an ATS-Friendly Resume in Minutes”
+* Subheading for students, freshers, and internship applicants
+* CTA buttons
+* Profession category cards
+* FAQ section
+* SEO-friendly layout
+
+2. Profession-Specific Resume Pages
+   Create separate pages/components for:
+
+* AI/ML Student Resume
+* Software Engineering Resume
+* Marketing Resume
+* Law Internship Resume
+* UI/UX Designer Resume
+
+Each page should:
+
+* Have profession-specific placeholders
+* Profession-relevant skills suggestions
+* Project suggestions
+* Resume tips
+* ATS-friendly structure
+* SEO optimized metadata
+
+3. Resume Builder Form
+   Fields:
+
+* Full Name
+* Email
+* Phone
+* LinkedIn
+* GitHub/Portfolio
+* Education
+* Skills
+* Projects
+* Experience
+* Certifications
+* Achievements
+
+4. Smart Suggestions
+   Based on profession selected:
+
+* Suggest relevant technical skills
+* Suggest resume bullet points
+* Suggest action verbs
+* Suggest project ideas
+
+5. Resume Templates
+   Include 3 clean ATS-friendly templates:
+
+* Minimal Modern
+* Professional Corporate
+* Student Fresher
+
+Allow live preview switching.
+
+6. PDF Export
+   Users can:
+
+* Preview resume live
+* Download as PDF
+* Print directly
+
+7. SEO Features
+
+* Fast loading
+* Proper headings
+* Metadata per profession page
+* Responsive design
+* Accessible UI
+
+8. UI/UX Requirements
+
+* Extremely clean typography
+* Elegant spacing
+* Smooth animations
+* Responsive on mobile
+* Minimal but premium feel
+* No clutter
+* Easy navigation
+
+9. Technical Constraints
+
+* No login system
+* No backend
+* No database
+* All processing client-side
+* Simple deploy to Vercel
+
+10. Extra Features (Optional)
+
+* Dark mode toggle
+* Resume score indicator
+* ATS compatibility checker
+* One-click sample data fill
+* Copy suggestions button
+
+Generate complete production-ready code structure and components.
