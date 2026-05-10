@@ -115,62 +115,7 @@ export const sampleData: Record<string, ResumeData> = {
       }
     ]
   },
-  "marketing": {
-    fullName: "Casey Morgan",
-    email: "casey.m@example.com",
-    phone: "(555) 234-5678",
-    linkedin: "https://linkedin.com/in/caseymorgan",
-    portfolio: "",
-    education: [
-      {
-        id: "edu-1",
-        institution: "Global Business School",
-        degree: "B.A. Marketing",
-        startDate: "Sep 2020",
-        endDate: "May 2024",
-        gpa: "3.7/4.0"
-      }
-    ],
-    skills: [
-      { id: "sk-1", name: "SEO/SEM" },
-      { id: "sk-2", name: "Content Strategy" },
-      { id: "sk-3", name: "Google Analytics" },
-      { id: "sk-4", name: "Email Marketing" }
-    ],
-    projects: [
-      {
-        id: "proj-1",
-        title: "Social Media Growth Campaign",
-        description: "Designed and executed a 30-day content calendar for a local business.",
-        technologies: "Canva, Buffer",
-        link: ""
-      }
-    ],
-    experience: [
-      {
-        id: "exp-1",
-        company: "Creative Spark Agency",
-        position: "Marketing Intern",
-        startDate: "Jun 2023",
-        endDate: "Aug 2023",
-        description: "Managed social media campaigns resulting in a 25% increase in follower engagement. Created SEO-optimized content that increased organic blog traffic by 15%."
-      }
-    ],
-    certifications: [
-      {
-        id: "cert-1",
-        name: "Google Analytics Certification",
-        issuer: "Google",
-        date: "Nov 2023"
-      }
-    ],
-    achievements: [
-      {
-        id: "ach-1",
-        description: "Outstanding Marketing Student Award 2024"
-      }
-    ]
-  },
+
   "law-internship": {
     fullName: "Jamie Lee",
     email: "jamie.lee@example.com",
@@ -220,60 +165,113 @@ export const sampleData: Record<string, ResumeData> = {
       }
     ]
   },
-  "ui-ux": {
-    fullName: "Riley Quinn",
-    email: "riley.q@example.com",
-    phone: "(555) 456-7890",
-    linkedin: "https://linkedin.com/in/rileyquinn",
-    portfolio: "https://rileyquinn.design",
-    education: [
-      {
-        id: "edu-1",
-        institution: "Design Institute",
-        degree: "B.F.A. Interaction Design",
-        startDate: "Sep 2019",
-        endDate: "May 2023",
-        gpa: "3.9/4.0"
-      }
-    ],
-    skills: [
-      { id: "sk-1", name: "Figma" },
-      { id: "sk-2", name: "Wireframing" },
-      { id: "sk-3", name: "User Research" },
-      { id: "sk-4", name: "Prototyping" }
-    ],
-    projects: [
-      {
-        id: "proj-1",
-        title: "Mobile App Redesign",
-        description: "Redesigned the onboarding flow of a fitness app to improve user retention.",
-        technologies: "Figma, User Testing",
-        link: "https://rileyquinn.design/fitness-app"
-      }
-    ],
-    experience: [
-      {
-        id: "exp-1",
-        company: "Pixel Perfect Studio",
-        position: "Product Design Intern",
-        startDate: "Jun 2022",
-        endDate: "Aug 2022",
-        description: "Designed intuitive user interfaces for web and mobile applications using Figma. Conducted user research and usability testing to validate design decisions."
-      }
-    ],
-    certifications: [
-      {
-        id: "cert-1",
-        name: "Google UX Design Professional Certificate",
-        issuer: "Coursera",
-        date: "Oct 2022"
-      }
-    ],
-    achievements: [
-      {
-        id: "ach-1",
-        description: "Best UI Design - Hackathon 2022"
-      }
-    ]
-  }
+  
+  "finance-analyst": {
+  fullName: "Ethan Brooks",
+  email: "ethan.brooks@example.com",
+  phone: "(555) 222-7890",
+  linkedin: "https://linkedin.com/in/ethanbrooks",
+  portfolio: "",
+  education: [
+    {
+      id: "edu-1",
+      institution: "Metropolitan Business University",
+      degree: "B.S. Finance",
+      startDate: "Sep 2020",
+      endDate: "May 2024",
+      gpa: "3.8/4.0"
+    }
+  ],
+  skills: [
+    { id: "sk-1", name: "Financial Modeling" },
+    { id: "sk-2", name: "Excel" },
+    { id: "sk-3", name: "SQL" },
+    { id: "sk-4", name: "Power BI" },
+    { id: "sk-5", name: "Market Analysis" }
+  ],
+  projects: [
+    {
+      id: "proj-1",
+      title: "Equity Research Analysis",
+      description: "Analyzed public company financial statements and prepared investment recommendation reports.",
+      technologies: "Excel, Financial Analysis",
+      link: ""
+    }
+  ],
+  experience: [
+    {
+      id: "exp-1",
+      company: "NorthBridge Capital",
+      position: "Finance Analyst Intern",
+      startDate: "Jun 2023",
+      endDate: "Aug 2023",
+      description: "Built forecasting models and assisted in preparing financial reports for quarterly business reviews."
+    }
+  ],
+  certifications: [
+    {
+      id: "cert-1",
+      name: "Bloomberg Market Concepts",
+      issuer: "Bloomberg",
+      date: "Jan 2024"
+    }
+  ],
+  achievements: [
+    {
+      id: "ach-1",
+      description: "Finalist - National Finance Case Competition"
+    }
+  ]
+},
+
+"professional": {
+  fullName: "Michael Carter",
+  email: "michael.carter@example.com",
+  phone: "(555) 678-1122",
+  linkedin: "https://linkedin.com/in/michaelcarter",
+  portfolio: "",
+  education: [
+    {
+      id: "edu-1",
+      institution: "Central State University",
+      degree: "B.B.A. Business Administration",
+      startDate: "Sep 2019",
+      endDate: "May 2023",
+      gpa: "3.7/4.0"
+    }
+  ],
+  skills: [
+    { id: "sk-1", name: "Project Coordination" },
+    { id: "sk-2", name: "Operations Management" },
+    { id: "sk-3", name: "Microsoft Excel" },
+    { id: "sk-4", name: "Communication" },
+    { id: "sk-5", name: "Reporting" }
+  ],
+  projects: [
+    {
+      id: "proj-1",
+      title: "Operations Workflow Optimization",
+      description: "Analyzed internal operational workflows and proposed efficiency improvements for reporting processes.",
+      technologies: "Excel, Operations Analysis",
+      link: ""
+    }
+  ],
+  experience: [
+    {
+      id: "exp-1",
+      company: "Vertex Solutions",
+      position: "Operations Intern",
+      startDate: "May 2022",
+      endDate: "Aug 2022",
+      description: "Supported operational reporting and coordinated cross-functional administrative tasks."
+    }
+  ],
+  certifications: [],
+  achievements: [
+    {
+      id: "ach-1",
+      description: "Employee Excellence Recognition Award"
+    }
+  ]
+}
 };

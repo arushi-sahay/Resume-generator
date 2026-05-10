@@ -2,10 +2,10 @@ import { ResumeData } from "@/lib/resume-schema";
 
 export function MinimalModern({ data }: { data: ResumeData }) {
   return (
-    <div className="resume-paper bg-white w-full h-[1122px] max-w-[794px] mx-auto p-10 text-gray-900 font-sans shadow-sm overflow-hidden box-border leading-relaxed">
+    <div className="resume-paper bg-white w-full h-[1122px] max-w-[794px] mx-auto p-8 text-gray-900 font-sans shadow-sm overflow-hidden box-border leading-relaxed">
       {/* Header */}
-      <header className="mb-8 border-b-2 border-gray-100 pb-6">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-2">{data.fullName || "Your Name"}</h1>
+      <header className="mb-6 border-b-2 border-gray-100 pb-4">
+        <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-2">{data.fullName || "Your Name"}</h1>
         <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600">
           {data.email && <span>{data.email}</span>}
           {data.phone && (
@@ -17,13 +17,13 @@ export function MinimalModern({ data }: { data: ResumeData }) {
           {data.linkedin && (
             <>
               <span className="text-gray-300">•</span>
-              <a href={data.linkedin} className="text-blue-600 hover:underline">{data.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a>
+              <a href={data.linkedin} className="text-gray-700 hover:underline">{data.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a>
             </>
           )}
           {data.portfolio && (
             <>
               <span className="text-gray-300">•</span>
-              <a href={data.portfolio} className="text-blue-600 hover:underline">{data.portfolio.replace(/^https?:\/\/(www\.)?/, '')}</a>
+              <a href={data.portfolio} className="text-gray-700 hover:underline">{data.portfolio.replace(/^https?:\/\/(www\.)?/, '')}</a>
             </>
           )}
         </div>
@@ -34,8 +34,8 @@ export function MinimalModern({ data }: { data: ResumeData }) {
         {/* Education */}
         {data.education.length > 0 && (
           <section>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Education</h2>
-            <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Education</h2>
+            <div className="space-y-3">
               {data.education.map(edu => (
                 <div key={edu.id}>
                   <div className="flex justify-between items-baseline mb-1">
@@ -55,8 +55,8 @@ export function MinimalModern({ data }: { data: ResumeData }) {
         {/* Experience */}
         {data.experience.length > 0 && (
           <section>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Experience</h2>
-            <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Experience</h2>
+            <div className="space-y-3">
               {data.experience.map(exp => (
                 <div key={exp.id}>
                   <div className="flex justify-between items-baseline mb-1">
@@ -74,14 +74,14 @@ export function MinimalModern({ data }: { data: ResumeData }) {
         {/* Projects */}
         {data.projects.length > 0 && (
           <section>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Projects</h2>
-            <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Projects</h2>
+            <div className="space-y-3">
               {data.projects.map(proj => (
                 <div key={proj.id}>
                   <div className="flex justify-between items-baseline mb-1">
                     <h3 className="font-semibold text-gray-900">
                       {proj.title}
-                      {proj.link && <a href={proj.link} className="text-blue-600 ml-2 text-xs font-normal hover:underline">Link</a>}
+                      {proj.link && <a href={proj.link} className="text-gray-700 ml-2 text-xs font-normal hover:underline">Link</a>}
                     </h3>
                     <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">{proj.technologies}</span>
                   </div>
@@ -96,10 +96,10 @@ export function MinimalModern({ data }: { data: ResumeData }) {
         <div className="grid grid-cols-2 gap-6">
           {data.skills.length > 0 && (
             <section>
-              <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Skills</h2>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {data.skills.map(skill => (
-                  <span key={skill.id} className="text-sm text-gray-700 bg-gray-50 border border-gray-200 px-2 py-1 rounded">
+                  <span key={skill.id} className="text-sm text-gray-700 bg-gray-100 border border-gray-300 px-2 py-1 rounded">
                     {skill.name}
                   </span>
                 ))}
@@ -109,7 +109,7 @@ export function MinimalModern({ data }: { data: ResumeData }) {
 
           {data.certifications.length > 0 && (
             <section>
-              <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Certifications</h2>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Certifications</h2>
               <div className="space-y-2">
                 {data.certifications.map(cert => (
                   <div key={cert.id} className="text-sm">
@@ -128,7 +128,7 @@ export function MinimalModern({ data }: { data: ResumeData }) {
         {/* Achievements */}
         {data.achievements.length > 0 && (
           <section>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Achievements</h2>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Achievements</h2>
             <ul className="list-disc list-inside space-y-1 ml-4">
               {data.achievements.map(ach => (
                 <li key={ach.id} className="text-sm text-gray-700">{ach.description}</li>

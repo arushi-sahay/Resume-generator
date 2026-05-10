@@ -1,4 +1,4 @@
-import { Cpu, Code, Megaphone, Scale, PenTool } from "lucide-react";
+import { Cpu, Code, Megaphone, Scale, PenTool, BarChart3, Briefcase } from "lucide-react";
 
 export type Profession = {
   id: string;
@@ -63,32 +63,7 @@ export const professions: Record<string, Profession> = {
       }
     ]
   },
-  "marketing": {
-    id: "marketing",
-    name: "Marketing",
-    icon: Megaphone,
-    skills: ["SEO/SEM", "Content Strategy", "Social Media Marketing", "Google Analytics", "Email Marketing", "Copywriting", "Market Research", "Brand Management", "A/B Testing", "HubSpot"],
-    bullets: [
-      "Managed social media campaigns resulting in a X% increase in follower engagement.",
-      "Conducted market research to identify target demographics and optimize ad spend.",
-      "Created SEO-optimized content that increased organic blog traffic by X%.",
-      "Analyzed campaign performance metrics using Google Analytics to inform strategy.",
-      "Coordinated with the design team to produce high-quality promotional materials."
-    ],
-    actionVerbs: ["Managed", "Launched", "Analyzed", "Optimized", "Coordinated", "Created", "Executed", "Monitored", "Researched", "Promoted"],
-    projects: [
-      {
-        title: "Social Media Growth Campaign",
-        description: "Designed and executed a 30-day content calendar for Instagram and Twitter.",
-        technologies: "Canva, Buffer, Google Analytics"
-      },
-      {
-        title: "Newsletter Revamp",
-        description: "Redesigned weekly newsletter format and improved open rates.",
-        technologies: "Mailchimp, HTML/CSS, Copywriting"
-      }
-    ]
-  },
+
   "law-internship": {
     id: "law-internship",
     name: "Law Internship",
@@ -115,32 +90,95 @@ export const professions: Record<string, Profession> = {
       }
     ]
   },
-  "ui-ux": {
-    id: "ui-ux",
-    name: "UI/UX Designer",
-    icon: PenTool,
-    skills: ["Figma", "Wireframing", "Prototyping", "User Research", "Usability Testing", "Interaction Design", "Adobe Creative Suite", "HTML/CSS", "Information Architecture", "Design Systems"],
-    bullets: [
-      "Designed intuitive user interfaces for web and mobile applications using Figma.",
-      "Conducted user research and usability testing to validate design decisions.",
-      "Created wireframes, user flows, and high-fidelity prototypes for client presentations.",
-      "Collaborated with developers to ensure accurate implementation of designs.",
-      "Developed and maintained a comprehensive design system to ensure brand consistency."
-    ],
-    actionVerbs: ["Designed", "Prototyped", "Researched", "Collaborated", "Created", "Iterated", "Conducted", "Wireframed", "Presented", "Standardized"],
-    projects: [
-      {
-        title: "Mobile App Redesign",
-        description: "Redesigned the onboarding flow of a fitness app to improve user retention.",
-        technologies: "Figma, User Testing, Prototyping"
-      },
-      {
-        title: "E-Commerce Design System",
-        description: "Created a scalable design system for a retail brand.",
-        technologies: "Figma, Component Libraries"
-      }
-    ]
-  }
+  
+  "finance-analyst": {
+  id: "finance-analyst",
+  name: "Finance Analyst",
+  icon: BarChart3,
+  skills: [
+    "Financial Modeling",
+    "Excel",
+    "Data Analysis",
+    "Forecasting",
+    "Budgeting",
+    "SQL",
+    "Power BI",
+    "Market Research"
+  ],
+  bullets: [
+    "Analyzed financial statements to identify trends and support strategic decision-making.",
+    "Built forecasting models to improve budgeting accuracy and operational planning.",
+    "Prepared financial reports and dashboards for senior stakeholders.",
+    "Conducted market research and competitor analysis to evaluate investment opportunities.",
+    "Collaborated with cross-functional teams to optimize financial processes."
+  ],
+  actionVerbs: [
+    "Analyzed",
+    "Forecasted",
+    "Evaluated",
+    "Optimized",
+    "Prepared",
+    "Managed",
+    "Researched"
+  ],
+  projects: [
+    {
+      title: "Financial Dashboard",
+      description: "Built a financial analytics dashboard to track revenue trends and expense patterns.",
+      technologies: "Excel, Power BI, SQL"
+    },
+    {
+      title: "Investment Research Report",
+      description: "Conducted comparative analysis of market sectors and presented investment insights.",
+      technologies: "Market Research, Financial Analysis"
+    }
+  ]
+},
+
+"professional": {
+  id: "professional",
+  name: "Professional Resume",
+  icon: Briefcase,
+  skills: [
+    "Communication",
+    "Leadership",
+    "Project Management",
+    "Operations",
+    "Problem Solving",
+    "Team Collaboration",
+    "Microsoft Office",
+    "Strategic Planning"
+  ],
+  bullets: [
+    "Managed daily operational responsibilities while coordinating with cross-functional teams.",
+    "Improved workflow efficiency through process optimization and structured reporting.",
+    "Collaborated with stakeholders to achieve organizational objectives and project goals.",
+    "Prepared reports, presentations, and documentation for internal business operations.",
+    "Demonstrated strong communication and organizational skills in fast-paced environments."
+  ],
+  actionVerbs: [
+    "Managed",
+    "Coordinated",
+    "Improved",
+    "Executed",
+    "Led",
+    "Organized",
+    "Supported"
+  ],
+  projects: [
+    {
+      title: "Operations Improvement Initiative",
+      description: "Streamlined internal workflows to improve efficiency and reduce manual effort.",
+      technologies: "Excel, Documentation, Reporting"
+    },
+    {
+      title: "Business Process Analysis",
+      description: "Analyzed existing business operations and proposed workflow improvements.",
+      technologies: "Operations, Analysis"
+    }
+  ]
+}
+
 };
 
 export const professionList = Object.values(professions);
